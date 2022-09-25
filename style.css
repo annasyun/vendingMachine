@@ -11,6 +11,19 @@
 
 @font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
 
+@media screen and (max-width:800px){
+    .cola-app {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+    section .result-get {
+        margin-top: 0px;
+    }
+}
+
 body,input {
 	font-family: 'Noto Sans KR', sans-serif;
     font-weight: 500;
@@ -39,7 +52,11 @@ body{
 }
 
 .title {
-    text-align: center;
+    background-image: url(./assets/logo.png);
+    width: 386px;
+    height: 164.12px;
+    background-size: cover;
+    margin: 0 auto;
     margin-bottom: 67px;
 }
 
@@ -58,17 +75,19 @@ body{
     column-gap: 12px;
 }
 
-button.item {
+.item {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5) ;
-    border: none;
     border-radius: 10px;
-    background-color: #FFFFFF;
     width: 94px;
     height: 130px;
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items: center;
+}
+
+.item:hover {
+    border: 3px solid #6327FE;
 }
 
 .item-img {
@@ -93,12 +112,6 @@ button.item {
     line-height: 22px;
     margin-top: 7px;
 }
-
-
-.items .selected {
-    border: 3px solid #6327FE;
-}
-
 
 .sold-out::before {
     content: "" ;
@@ -136,9 +149,12 @@ button.item {
     background-color: #EAE8FE;
 }
 
+.txt-change::after {
+    content:'원' ;
+}
+
 .calc-refund {
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
     font-size: 13px;
     background-color: #FFFFFF;
     border-style: none;
@@ -249,6 +265,10 @@ button.item {
     
 }
 
+.pocket-money::after {
+    content: '원';
+}
+
 .result-get {
     width: 360px;
     height: 474px;
@@ -296,11 +316,15 @@ button.item {
     margin-right: 10px;
 }
 
-.text-total {
+.txt-total {
     width: 109px;
     height: 20px;
     margin-top: 6px;
     margin-left: auto;
     text-align: right;
     font-size: 12px;
+}
+
+.txt-total::after {
+    content: '원';
 }
